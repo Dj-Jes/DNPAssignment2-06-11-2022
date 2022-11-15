@@ -14,7 +14,7 @@ namespace EfcDataAccess.DAOs {
         public Task<User> CreateAsync(User user) {
             string newId = ShortId.Generate(new GenerationOptions(true, true, 12));
 
-            user.Id = newId;
+            user.UserId = newId;
             user.SubscribedSubs = new List<SubPage>();
 
             _context.Users.Add(user);
@@ -25,7 +25,7 @@ namespace EfcDataAccess.DAOs {
 
         public Task<User?> GetByIdAsync(string id) {
             User? existing = _context.Users.FirstOrDefault(u =>
-                u.Id.Equals(id)
+                u.UserId.Equals(id)
             );
 
             return Task.FromResult(existing);

@@ -99,7 +99,7 @@
                 AuthorId = user.Claims.First(t => t.Type.Equals("UserId")).Value
             };
 
-            await postService.CreateCommentAsync(commentCreationDto, postData.Id);
+            await postService.CreateCommentAsync(commentCreationDto, postData.PostId);
             body = "";
             postData = null!;
             postData = await postService.GetByIdAsync(PostId);

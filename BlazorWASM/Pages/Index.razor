@@ -28,7 +28,7 @@
                     <RadzenText TextStyle="TextStyle.H6">Pages</RadzenText>
                     @foreach (Domain.Models.SubPage subPage in subPagesData) {
                         <hr />
-                        <a href="/s/@subPage.Id" class="text-decoration-none">
+                        <a href="/s/@subPage.SubPageId" class="text-decoration-none">
                             <RadzenText TextStyle="TextStyle.Subtitle2">s/@subPage.Name</RadzenText>
                         </a>
                     }
@@ -41,10 +41,10 @@
                         <div class="row mb-2">
                             <RadzenCard>
                                 <RadzenLink Path="subPage"></RadzenLink>
-                                <a href="/s/@subPage.Id" class="underline-hover text-decoration-none">
+                                <a href="/s/@subPage.SubPageId" class="underline-hover text-decoration-none">
                                     <RadzenText TextStyle="TextStyle.Overline"> s/@subPage.Name</RadzenText>
                                 </a>
-                                <a href="/s/@subPage.Id/p/@post.Id" class="text-decoration-none">
+                                <a href="/s/@subPage.SubPageId/p/@post.PostId" class="text-decoration-none">
                                     <RadzenText TextStyle="TextStyle.H6">@post.Title</RadzenText>
                                 </a>
                                 <RadzenText TextStyle="TextStyle.Subtitle2">Posted by @post.Author.Username</RadzenText>

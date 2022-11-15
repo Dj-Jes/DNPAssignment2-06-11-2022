@@ -54,7 +54,7 @@
             };
 
             Domain.Models.SubPage subPage = await subPageService.CreateAsync(subPageCreationDto);
-            navMgr.NavigateTo($"/s/{subPage.Id}");
+            navMgr.NavigateTo($"/s/{subPage.SubPageId}");
 
         }
         catch (Exception e) {

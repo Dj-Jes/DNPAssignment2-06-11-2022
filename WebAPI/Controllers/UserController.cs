@@ -17,7 +17,7 @@ namespace WebAPI.Controllers {
         public async Task<ActionResult<User>> CreateAsync(UserCreationDto dto) {
             try {
                 User user = await userLogic.CreateAsync(dto);
-                return Created($"/user/{user.Id}", user);
+                return Created($"/user/{user.UserId}", user);
             }
             catch (InvalidUsernameException e) {
                 Console.WriteLine(e);

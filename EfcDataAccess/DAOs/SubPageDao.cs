@@ -15,7 +15,7 @@ namespace EfcDataAccess.DAOs {
 
         public Task<SubPage> CreateAsync(SubPage subPage) {
             string newId = ShortId.Generate(new GenerationOptions(true, true, 12));
-            subPage.Id = newId;
+            subPage.SubPageId = newId;
             subPage.Posts = new List<Post>();
 
             _context.SubPages.Add(subPage);
@@ -30,7 +30,7 @@ namespace EfcDataAccess.DAOs {
         }
 
         public Task<SubPage?> GetByIdAsync(string id) {
-            SubPage? subPage = _context.SubPages.FirstOrDefault(t => t.Id == id);
+            SubPage? subPage = _context.SubPages.FirstOrDefault(t => t.SubPageId == id);
             return Task.FromResult(subPage);
         }
 
@@ -40,7 +40,7 @@ namespace EfcDataAccess.DAOs {
         }
 
         public Task<IEnumerable<Post>?> GetPostsAsync(string subPageId) {
-            IEnumerable<Post>? posts = _context.SubPages.FirstOrDefault(t => t.Id.Equals(subPageId))?.Posts.AsEnumerable();
+            IEnumerable<Post>? posts = _context.SubPages.FirstOrDefault(t => t.SubPageId.Equals(subPageId))?.Posts.AsEnumerable();
             return Task.FromResult(posts);
         }
     }
