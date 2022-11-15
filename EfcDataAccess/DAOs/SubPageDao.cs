@@ -1,11 +1,9 @@
 ﻿using Application.DaoInterfaces;
-using Domain.Exceptions;
 using Domain.Models;
-using shortid.Configuration;
 using shortid;
-using System.Xml.Linq;
+using shortid.Configuration;
 
-namespace FileData.DAOs {
+namespace EfcDataAccess.DAOs {
     public class SubPageDao : ISubPageDao {
 
         private readonly FileContext _context;

@@ -3,7 +3,7 @@ using Domain.Models;
 using shortid;
 using shortid.Configuration;
 
-namespace FileData.DAOs {
+namespace EfcDataAccess.DAOs {
     public class UserDao : IUserDao {
         private readonly FileContext _context;
 
