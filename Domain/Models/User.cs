@@ -1,10 +1,14 @@
-﻿namespace Domain.Models {
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Models {
     public class User {
-        public string Id { get; set; }
+       [Key] public string UserId { get; set; }
         public string Username { get; set; }
         public string HashedPassword { get; set; }
-        public int Karma { get; set; }
         public ICollection<SubPage> SubscribedSubs { get; set; }
-       
+
+        public User()
+        {
+        }
     }
 }

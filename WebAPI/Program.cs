@@ -3,10 +3,11 @@ using Application.Logic;
 using Application.LogicInterfaces;
 using Domain.Auth;
 using FileData;
-using FileData.DAOs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using EfcDataAccess_SQLLight;
+using EfcDataAccess_SQLLight.DAOs;
 using WebAPI.AuthService;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\EfcDataAccess_SQLLight\EfcDataAccess_SQLLight.csproj" />
     <ProjectReference Include="..\FileData\FileData.csproj" />
   </ItemGroup>
 

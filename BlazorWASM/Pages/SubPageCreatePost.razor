@@ -80,11 +80,11 @@
                 Title = title,
                 Body = body,
                 AuthorId = user.Claims.First(t => t.Type.Equals("UserId")).Value,
-                SubPageId = subPageData.Id
+                SubPageId = subPageData.SubPageId
             };
 
             Post post = await postService.CreateAsync(postCreationDto);
-            navMgr.NavigateTo($"/s/{subPageData.Id}/p/{post.Id}");
+            navMgr.NavigateTo($"/s/{subPageData.SubPageId}/p/{post.PostId}");
 
         }
         catch (Exception e) {

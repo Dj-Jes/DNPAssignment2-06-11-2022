@@ -18,7 +18,7 @@ public class PostController : ControllerBase {
     public async Task<ActionResult<Post>> CreateAsync(PostCreationDto dto) {
         try {
             Post post = await postLogic.CreateAsync(dto);
-            return Created($"/post/{post.Id}", post);
+            return Created($"/post/{post.PostId}", post);
         }
         catch (UserNotFoundException e) {
             Console.WriteLine(e.Message);
@@ -38,7 +38,7 @@ public class PostController : ControllerBase {
     public async Task<ActionResult<Post>> CreateCommentAsync(CommentCreationDto dto, [FromRoute] string id) {
         try {
             Post post = await postLogic.CreateAsync(dto, id);
-            return Created($"/post/{post.Id}", post);
+            return Created($"/post/{post.PostId}", post);
         }
         catch (UserNotFoundException e) {
             Console.WriteLine(e.Message);
